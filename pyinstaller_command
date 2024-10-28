@@ -1,2 +1,1 @@
-pyinstaller --onedir --windowed gui_script.py --add-data "/home/wasim/anaconda3/envs/pdf2ns/lib/python3.10/site-packages/pinecone:pinecone" --add-data "/home/wasim/Desktop/PDF2NS_python/grobid_client_python/*:./grobid_client_python/"
- 
+pyinstaller --onedir --windowed gui_script.py --add-data=".env:." --add-data "/home/wasim/anaconda3/envs/pdf2ns/lib/python3.10/site-packages/pinecone:pinecone" --add-data "/home/wasim/Desktop/PDF2NS_python/grobid_client_python/*:./grobid_client_python/"

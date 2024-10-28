@@ -5,7 +5,7 @@ a = Analysis(
     ['gui_script.py'],
     pathex=[],
     binaries=[],
-    datas=[('/home/wasim/anaconda3/envs/pdf2ns/lib/python3.10/site-packages/pinecone', 'pinecone'), ('/home/wasim/Desktop/PDF2NS_python/grobid_client_python/*', './grobid_client_python/')],
+    datas=[('.env', '.'), ('/home/wasim/anaconda3/envs/pdf2ns/lib/python3.10/site-packages/pinecone', 'pinecone'), ('/home/wasim/Desktop/PDF2NS_python/grobid_client_python/*', './grobid_client_python/')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

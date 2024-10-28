@@ -1,4 +1,5 @@
 import os
+from os.path import join, dirname
 import sys
 import glob
 import requests
@@ -16,12 +17,16 @@ from grobid_client_python.grobid_client.grobid_client import GrobidClient
 from transformers import BertTokenizer, BertModel, AutoTokenizer, AutoModel
 from dotenv import load_dotenv
 
+# Specify the .env file path
+dotenv_path = ".env"
+dotenv_path = join(dirname(__file__), '.env')
+
 # Load environment variables from the .env file
-load_dotenv(dotenv_path=".env")
+# load_dotenv(dotenv_path=".env")
+load_dotenv(dotenv_path=dotenv_path,)
 
 # import python.PMC_downloader_Utils.py as pmcd
-parent_directory = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..'))
+parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Define the namespace
 namespaces = {'ns': 'http://www.tei-c.org/ns/1.0'}
@@ -139,6 +144,9 @@ def push_vectors_into_pinecone(all_texts_citated, namespace, embedd_model, count
     # pdb.set_trace()
     # print("Inside push_vectors_into_pinecone()", flush=True)
     # print("Inside push_vectors_into_pinecone()")
+
+    print(f"Env file path: {dotenv_path}", flush=True)
+
 
     # initialize pinecone and connect to an index
     index = get_pinecone_index()
